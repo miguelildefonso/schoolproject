@@ -21,4 +21,15 @@ namespace SchoolProject.Models.Form
     {        
         Regular, Irregular
     }
+
+    public enum Stud_Program
+    {        
+        Computer_Science, Information_Technology, Tourism_Management,
+        Hospitality_Management, Office_Administration
+    }
+
+    public enum Sem
+    {
+        First, Second
+    }
 }

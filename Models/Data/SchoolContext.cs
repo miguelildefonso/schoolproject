@@ -12,5 +12,6 @@ namespace SchoolProject.Models.Data
         public DbSet<Admin_User> admin_user {get; set;}
         public DbSet<Programs> program {get; set;}
         public DbSet<Professor> professor {get; set;}
+        public DbSet<Student> student {get; set;}
     }
 }

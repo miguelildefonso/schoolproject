@@ -6,7 +6,6 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Models.Data;
-using SchoolProject.Models.Form;
 
 namespace SchoolProject.Controllers
 {
@@ -22,6 +21,7 @@ namespace SchoolProject.Controllers
             this.httpContextAccessor = httpContextAccessor;
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
+
         [HttpGet]
         [Route("/School/AddStudent")]
 
@@ -31,9 +31,41 @@ namespace SchoolProject.Controllers
         }
         [HttpPost]
         [Route("/School/AddStudent")]
-        public ViewResult SubmitForm()
+        public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Student form)
         {
-            return View();
+             Student st = new Student();
+             st.student_id = form.student_id;
+             st.lastname = form.lastname;
+             st.firstname = form.firstname;
+             st.middlename = form.middlename;
+             st.birthday = form.birthday;
+             st.program = form.program;
+             st.status = form.status;
+             st.academic_year = form.academic_year;
+             st.sem = form.sem;
+             st.username = form.username;
+             st.password = form.password;
+            _context.student.Add(st);
+            int rec = _context.SaveChanges();
+            if(rec==1)
+            {
+                IQueryable<Admin_User> admin = from s in _context.admin_user
+                                        select s;
+                IQueryable<Professor> profe = from s in _context.professor
+                                        select s;
+                IQueryable<Programs> prog = from s in _context.program
+                                        select s;
+                IQueryable<Student> stud = from s in _context.student
+                                        select s;
+                ViewBag.student = stud;
+                ViewBag.admin_user = admin;
+                ViewBag.professor = profe; 
+                ViewBag.programs = prog; 
+                
+
+                return View();
+            }
+            return View("Error");
         }
     }
 }

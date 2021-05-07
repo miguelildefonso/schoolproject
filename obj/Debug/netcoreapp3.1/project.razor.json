@@ -14447,13 +14447,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\SchoolProject\\Views\\Login\\Error.cshtml",
-      "TargetPath": "Views\\Login\\Error.cshtml",
+      "FilePath": "c:\\SchoolProject\\Views\\AddStudent\\SubmitForm.cshtml",
+      "TargetPath": "Views\\AddStudent\\SubmitForm.cshtml",
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\SchoolProject\\Views\\Shared\\Editor Template\\DateTime.cshtml",
-      "TargetPath": "Views\\Shared\\Editor Template\\DateTime.cshtml",
+      "FilePath": "c:\\SchoolProject\\Views\\Login\\Error.cshtml",
+      "TargetPath": "Views\\Login\\Error.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14509,6 +14509,11 @@
     {
       "FilePath": "c:\\SchoolProject\\Views\\AddProgram\\InitForm.cshtml",
       "TargetPath": "Views\\AddProgram\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\AddStudent\\Error.cshtml",
+      "TargetPath": "Views\\AddStudent\\Error.cshtml",
       "FileKind": "mvc"
     }
   ],

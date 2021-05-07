@@ -85,3 +85,5 @@ C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddAdmin\SubmitForm.cshtml.
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddProfessor\Error.cshtml.g.cs
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddProfessor\InitForm.cshtml.g.cs
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddProfessor\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddStudent\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddStudent\Error.cshtml.g.cs
