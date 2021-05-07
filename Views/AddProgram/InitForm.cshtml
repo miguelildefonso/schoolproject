@@ -1,0 +1,51 @@
+@model SchoolProject.Models.Form.Programs;
+<link rel="stylesheet" href="~/css/adminprogram.css" />
+<div class="sidenav">
+  <h4>Add Admin</h4>
+  <a href="/School/Admin">Home</a>
+  <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddProfessor">Add Professor</a>
+  <a href="/School/AddProgram">Add Program</a>
+  <a href="/School/AddAdmin">Add Admin</a>
+  <a href="/School/Login">Logout</a>
+</div>
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="margin-left: auto;">
+      <li class="nav-item">
+        @{
+          <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+        }
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Add Degree</h4>
+  @using(Html.BeginForm("SubmitForm", "AddProgram", FormMethod.Post))
+  {
+    <form>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Program Id</label>
+          @Html.TextBoxFor(m => m.program_id, new{@class="form-control",  @placeholder="Enter Program Id"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Program Code</label>
+          @Html.TextBoxFor(m => m.program_code, new{@class="form-control",  @placeholder="Enter Program Code"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Program Title</label>
+          @Html.TextBoxFor(m => m.program_title, new{@class="form-control",  @placeholder="Enter Program Title"})
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Major</label>
+          @Html.TextBoxFor(m => m.major, new{@class="form-control",  @placeholder="Enter Major"})
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  }
+</div>

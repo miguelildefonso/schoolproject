@@ -1,0 +1,62 @@
+@model SchoolProject.Models.Form.Admin_User;
+<link rel="stylesheet" href="~/css/addstud.css" />
+<link rel="stylesheet" href="~/css/adminadmin.css" />
+
+<div class="sidenav">
+  <h4>Add Admin</h4>
+  <a href="/School/Admin">Home</a>
+  <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddProfessor">Add Professor</a>
+  <a href="/School/AddProgram">Add Program</a>
+  <a href="/School/AddAdmin">Add Admin</a>
+  <a href="/School/Login">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="margin-left: auto;">
+      <li class="nav-item">
+        @{
+          <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+        }
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Add Admin</h4>
+  @using(Html.BeginForm("SubmitForm", "AddAdmin", FormMethod.Post))
+  {
+    <form>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Admin Id</label>
+          @Html.TextBoxFor(m => m.admin_id, new{@class="form-control",  @placeholder="Enter Admin Id"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">First Name</label>
+          @Html.TextBoxFor(m => m.firstname, new{@class="form-control",  @placeholder="Enter First Name"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Last Name</label>
+          @Html.TextBoxFor(m => m.lastname, new{@class="form-control",  @placeholder="Enter Last Name"})
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Username</label>
+          @Html.TextBoxFor(m => m.username, new{@class="form-control",  @placeholder="Enter Username"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Password</label>
+          @Html.PasswordFor(m => m.password, new{@class="form-control",  @placeholder="Enter Password"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Type</label>
+          @Html.TextBoxFor(m => m.type, new{@class="form-control",  @placeholder="Enter Type"})
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  }
+</div>

@@ -1,0 +1,67 @@
+<link rel="stylesheet" href="~/css/adminstudent.css" />
+<div class="sidenav">
+  <h4>Add Admin</h4>
+  <a href="/School/Admin">Home</a>
+  <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddProfessor">Add Professor</a>
+  <a href="/School/AddProgram">Add Program</a>
+  <a href="/School/AddAdmin">Add Admin</a>
+  <a href="/School/Login">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav" style="margin-left: auto;">
+      <li class="nav-item">
+        @{
+          <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+        }
+      </li>
+    </ul>
+  </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Add Student</h4>
+  <form>
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="exampleInputEmail1">Last Name</label>
+        <input type="text" class="form-control"  placeholder="Enter Last Name">
+      </div>
+      <div class="col-xs-3">
+        <label for="exampleInputEmail1">First Name</label>
+        <input type="text" class="form-control"  placeholder="Enter First Name">
+      </div>
+      <div class="col-xs-3">
+        <label for="exampleInputEmail1">Middle Name</label>
+        <input type="text" class="form-control"  placeholder="Enter Middle Name">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="exampleInputEmail1">Birthday</label>
+        <input type="date" class="form-control">
+      </div>
+    </div>
+    <div class="form-group row">
+      <div class="col-xs-3">
+        <label for="exampleFormControlSelect1">Program</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>BS Computer Science</option>
+          <option>BS Information Technology</option>
+          <option>BS Tourism Management</option>
+          <option>BS Hospitality Management</option>
+          <option>BS Office Administration</option>
+        </select>
+      </div>
+      <div class="col-xs-3">
+        <label for="exampleFormControlSelect1">Status</label>
+        <select class="form-control" id="exampleFormControlSelect1">
+          <option>Regular</option>
+          <option>Irregular</option>
+        </select>
+      </div>
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>

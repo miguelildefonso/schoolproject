@@ -1,0 +1,119 @@
+@model SchoolProject.Models.Form.Admin_User;
+@using SchoolProject.Models.Data;
+
+<link rel="stylesheet" href="~/css/adminhome.css" />
+
+<div class="sidenav">
+  <h4>Admin</h4>
+  <a href="/School/Admin">Home</a>
+  <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddProfessor">Add Professor</a>
+  <a href="/School/AddProgram">Add Program</a>
+  <a href="/School/AddAdmin">Add Admin</a>
+  <a href="/School/Login">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  @using(Html.BeginForm("SubmitForm", "AdminHome", FormMethod.Post))
+  {
+    <div class="tableadmin">
+      <h3>Admin Users</h3>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Admin ID</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Type</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.admin_user as IEnumerable<Admin_User>)
+            {
+              <tr>
+                <td>@item.admin_id</td>
+                <td>@item.firstname</td>
+                <td>@item.lastname</td>
+                <td>@item.type</td>
+                <td>@item.username</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tableprogram">
+      <h3>Programs</h3>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Program ID</th>
+            <th>Program Code</th>
+            <th>Program Title</th>
+            <th>Major</th>
+          </tr>
+        </thead>
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.programs as IEnumerable<Programs>)
+            {
+              <tr>
+                <td>@item.program_id</td>
+                <td>@item.program_code</td>
+                <td>@item.program_title</td>
+                <td>@item.major</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+
+    <div class="tableprof">
+      <h3>Professors</h3>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Professor ID</th>
+            <th>Name</th>
+            <th>Contact</th>
+            <th>Gender</th>
+            <th>Status</th>
+            <th>Birthday</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.professor as IEnumerable<Professor>)
+            {
+              <tr>
+                <td>@item.professor_id</td>
+                <td>@item.professor_name</td>
+                <td>@item.professor_no</td>
+                <td>@item.gender</td>
+                <td>@item.status</td>
+                <td>@item.birthdate</td>
+                <td>@item.username</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
