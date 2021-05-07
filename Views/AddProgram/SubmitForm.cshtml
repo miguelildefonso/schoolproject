@@ -107,7 +107,11 @@
                 <td>@item.professor_no</td>
                 <td>@item.gender</td>
                 <td>@item.status</td>
-                <td>@item.birthdate</td>
+                @{
+                  var bday = @item.birthdate;
+                  var b = bday.ToShortDateString();
+                  <td>@b</td>
+                }
                 <td>@item.username</td>
               </tr>
             }
@@ -143,7 +147,11 @@
                 <td>@item.lastname</td>
                 <td>@item.firstname</td>
                 <td>@item.middlename</td>
-                <td>@item.birthday</td>
+                @{
+                  var bday = @item.birthday;
+                  var b = bday.ToShortDateString();
+                  <td>@b</td>
+                }
                 <td>@item.program</td>
                 <td>@item.status</td>
                 <td>@item.academic_year</td>

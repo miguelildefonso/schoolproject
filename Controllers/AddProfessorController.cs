@@ -21,7 +21,7 @@ namespace SchoolProject.Controllers
             this.httpContextAccessor = httpContextAccessor;
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
-         [HttpGet]
+        [HttpGet]
         [Route("/School/AddProfessor")]
 
          public ViewResult InitForm()

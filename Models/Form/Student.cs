@@ -10,7 +10,7 @@ namespace SchoolProject.Models.Form
         public DateTime birthday{get; set;}
         public string program{get; set;}
         public string status{get; set;}
-        public Int32 sem{get; set;}
+        public string sem{get; set;}
         public Int32 yearlevel {get; set;}
         public Int32 academic_year{get; set;}
         public string username{get; set;}

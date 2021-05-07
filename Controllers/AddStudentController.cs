@@ -21,7 +21,6 @@ namespace SchoolProject.Controllers
             this.httpContextAccessor = httpContextAccessor;
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
-
         [HttpGet]
         [Route("/School/AddStudent")]
 
@@ -33,18 +32,20 @@ namespace SchoolProject.Controllers
         [Route("/School/AddStudent")]
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Student form)
         {
-             Student st = new Student();
-             st.student_id = form.student_id;
-             st.lastname = form.lastname;
-             st.firstname = form.firstname;
-             st.middlename = form.middlename;
-             st.birthday = form.birthday;
-             st.program = form.program;
-             st.status = form.status;
-             st.academic_year = form.academic_year;
-             st.sem = form.sem;
-             st.username = form.username;
-             st.password = form.password;
+            Student st = new Student();
+            st.student_id = form.student_id;
+            st.lastname = form.lastname;
+            st.firstname = form.firstname;
+            st.middlename = form.middlename;
+            st.program = form.program;
+            st.status = form.status;
+            st.academic_year = form.academic_year;
+            st.yearlevel = form.yearlevel;
+            st.username = form.username;
+            st.password = form.password;
+            st.sem = form.sem;
+            st.birthday = form.birthday;
+            
             _context.student.Add(st);
             int rec = _context.SaveChanges();
             if(rec==1)
@@ -61,11 +62,11 @@ namespace SchoolProject.Controllers
                 ViewBag.admin_user = admin;
                 ViewBag.professor = profe; 
                 ViewBag.programs = prog; 
-                
-
                 return View();
+            }else
+            {
+                return View("Error");
             }
-            return View("Error");
         }
     }
 }

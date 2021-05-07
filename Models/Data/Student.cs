@@ -22,7 +22,7 @@ namespace SchoolProject.Models.Data
         [Column]
         public string status{get; set;}
         [Column]
-        public Int32 sem{get; set;}
+        public string sem{get; set;}
         [Column]
         public Int32 yearlevel {get; set;}
         [Column]

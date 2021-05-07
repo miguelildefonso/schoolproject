@@ -32,6 +32,9 @@ namespace SchoolProject.Controllers
                                         select s;
             IQueryable<Programs> prog = from s in _context.program
                                         select s;
+            IQueryable<Student> stud = from s in _context.student
+                                        select s;
+            ViewBag.student = stud;
             ViewBag.admin_user = admin;
             ViewBag.professor = profe; 
             ViewBag.programs = prog; 
