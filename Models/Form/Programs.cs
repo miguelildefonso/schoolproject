@@ -1,5 +1,4 @@
 using System;
-
 namespace SchoolProject.Models.Form
 {
     public class Programs

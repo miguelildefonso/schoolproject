@@ -87,3 +87,14 @@ C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddProfessor\InitForm.cshtm
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddProfessor\SubmitForm.cshtml.g.cs
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddStudent\SubmitForm.cshtml.g.cs
 C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddStudent\Error.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddSubject\Error.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddSubject\InitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\AddSubject\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginStudent\InitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginStudent\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginAdmin\InitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginAdmin\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginParent\InitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginParent\SubmitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginProfessor\InitForm.cshtml.g.cs
+C:\SchoolProject\obj\Debug\netcoreapp3.1\Razor\Views\LoginProfessor\SubmitForm.cshtml.g.cs

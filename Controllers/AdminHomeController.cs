@@ -34,6 +34,9 @@ namespace SchoolProject.Controllers
                                         select s;
             IQueryable<Student> stud = from s in _context.student
                                         select s;
+            IQueryable<Subject> subj = from s in _context.subject
+                                        select s;
+            ViewBag.subject = subj;
             ViewBag.student = stud;
             ViewBag.admin_user = admin;
             ViewBag.professor = profe; 
@@ -52,6 +55,9 @@ namespace SchoolProject.Controllers
                                         select s;
             IQueryable<Student> stud = from s in _context.student
                                         select s;
+            IQueryable<Subject> subj = from s in _context.subject
+                                        select s;
+            ViewBag.subject = subj;
             ViewBag.student = stud;
             ViewBag.admin_user = admin;
             ViewBag.professor = profe; 
