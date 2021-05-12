@@ -1,0 +1,29 @@
+
+<link rel="stylesheet" href="~/css/studhome.css" />
+
+<div class="sidenav">
+  <img src="~/img/students.png" class="img-circle" width="80" height="80">
+  <h4>Student Menu</h4><br><br>
+  <a href="/School/Student">Home</a>
+  <a href="#">View Grade</a>
+  <a href="#">View Attendance</a>
+  <a href="#">View Profile</a>
+  <a href="/School/LoginStudent" id="logout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome</h4>
+  <img id="bg-prof" src="/img/stud.png" alt="student">
+  
+</div>

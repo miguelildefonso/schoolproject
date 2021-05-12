@@ -1,0 +1,65 @@
+.col-xs-3 {
+    margin-right: 10px;
+}
+
+h4{
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    color: #5e5c5c;
+    display: block; 
+}
+.sidenav {
+    height: 100%;
+    width: 200px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(45deg, #f5f7fa, #b8c6db);
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  .sidenav a {
+    padding: 6px 8px 6px 16px;
+    text-decoration: none;
+    font-size: 18px;
+    color: #818181;
+    display: block;
+  }
+  
+  .sidenav a:hover {
+    color: #4287ee;
+  }
+  
+  .main {
+    margin-left: 200px; /* Same as the width of the sidenav */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding: 0px 10px;
+  }
+  form {
+    margin-left: 100px;
+    width: 800px;
+  }
+  label {
+    font-size: 12pt;
+  }
+  img{
+    width: 90px;
+    height: 90px;
+    margin-left: 55px;
+    margin-top: 50px;
+  }
+
+  #logout {
+    position: absolute;
+    bottom: 20;
+  }
+
+  #bg-prof {
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    bottom: 20;
+    right: 20;
+  }

@@ -35,6 +35,10 @@ namespace SchoolProject.Controllers
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Subject form)
         {
             Subject sub = new Subject();
+            sub.subject_id = form.subject_id;
+            sub.subject_code = form.subject_code;
+            sub.subject_title = form.subject_title;
+            sub.units = form.units;
             _context.subject.Add(sub);
             int rec = _context.SaveChanges();
             if(rec==1)

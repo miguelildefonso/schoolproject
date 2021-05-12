@@ -6,7 +6,6 @@ using System.Linq;
 using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore;
 using SchoolProject.Models.Data;
-using SchoolProject.Models.Form;
 
 namespace SchoolProject.Controllers
 {
@@ -30,19 +29,28 @@ namespace SchoolProject.Controllers
             return View();
         }
         [HttpPost]
+        [ValidateAntiForgeryToken] 
         [Route("/School/Login")]
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Admin_User form)
         {
+            SchoolProject.Models.Data.Admin_User user = new SchoolProject.Models.Data.Admin_User();
+            user.username = form.username;
+            user.password = form.password;
+
             var pass = _context.admin_user
-                   .Where(u => u.username == form.username)
-                   .Select(u =>u.password)
+                   .Where(u => u.username.Equals(form.username))
+                   .Select(u => u.password)
                    .FirstOrDefault();
-            ViewBag.p = pass;
             if(form.password.Equals(pass))
             {
                 return View();
             }
-            return View("Error");
+            else
+            {
+                ViewBag.p = pass;
+                return View("Error");
+            }
+            
         }
     }
 }

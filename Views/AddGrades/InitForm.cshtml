@@ -1,0 +1,67 @@
+@model SchoolProject.Models.Form.Grades;
+@using SchoolProject.Models.Form;
+<link rel="stylesheet" href="~/css/profgrades.css" />
+
+<div class="sidenav">
+  <img src="~/img/teacher.png" class="img-circle" width="80" height="80">
+  <h4>Professor Menu</h4><br><br>
+  <a href="/School/Professor">Home</a>
+  <a href="/School/AddGrades">Add Grade</a>
+  <a href="/School/AddAttendance">Add Attendance</a>
+  <a href="#">View Profile</a>
+  <a href="#">View Record</a>
+  <a href="/School/LoginProfessor" id="logout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Add Grades</h4>
+  @using(Html.BeginForm("SubmitForm", "AddGrades", FormMethod.Post))
+  {
+    <form>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Grade Id</label>
+          @Html.TextBoxFor(m => m.grade_id, new{@class="form-control",  @placeholder="Enter Grade Id"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Student Id</label>
+          @Html.TextBoxFor(m => m.student_id, new{@class="form-control",  @placeholder="Enter Student Id"})
+        </div>
+      </div>
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Subject Code</label>
+          @Html.TextBoxFor(m => m.subject_title, new{@class="form-control",  @placeholder="Enter Subject Code"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Grade</label>
+          @Html.TextBoxFor(m => m.grade, new{@class="form-control",  @placeholder="Enter Grade"})
+        </div>
+        <div class="col-xs-3">
+          <label for="exampleFormControlSelect1">Remarks</label>
+          @Html.DropDownListFor(m => m.remarks, 
+            new SelectList(Enum.GetValues(typeof(Remarks))), new{@class="form-control"})
+        </div>
+      </div>
+
+      <div class="form-group row">
+        <div class="col-xs-3">
+          <label for="exampleInputEmail1">Comment</label>
+          @Html.TextBoxFor(m => m.comment, new{@class="form-control",  @placeholder="Comments"})
+        </div>
+      </div>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </form>
+  }
+</div>

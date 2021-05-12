@@ -11,6 +11,16 @@ namespace SchoolProject.Controllers
 {
     public class LoginAdminController : Controller
     {
+        private readonly SchoolContext _context;
+        IHttpContextAccessor httpContextAccessor;
+        HttpContext httpContext;
+        public LoginAdminController(SchoolContext context, IHttpContextAccessor httpContextAccessor)
+        {
+            this._context = context;
+            this.httpContextAccessor = httpContextAccessor;
+            this.httpContext = this.httpContextAccessor.HttpContext;
+        }
+
         [HttpGet]
         [Route("/School/LoginAdmin")]
         public ViewResult InitForm()
@@ -19,9 +29,18 @@ namespace SchoolProject.Controllers
         }
         [HttpPost]
         [Route("/School/LoginAdmin")]
-         public ViewResult SubmitForm()
+         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Admin_User form)
         {  
-            return View();
+            var pass = _context.admin_user
+                   .Where(u => u.username == form.username)
+                   .Select(u =>u.password)
+                   .FirstOrDefault();
+            ViewBag.p = pass;
+            if(form.password.Equals(pass))
+            {
+                return View();
+            }
+            return View("Error");
         }     
     }
 }

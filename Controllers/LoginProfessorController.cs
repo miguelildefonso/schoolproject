@@ -11,6 +11,15 @@ namespace SchoolProject.Controllers
 {
     public class LoginProfessorController : Controller
     {
+        private readonly SchoolContext _context;
+        IHttpContextAccessor httpContextAccessor;
+        HttpContext httpContext;
+        public LoginProfessorController(SchoolContext context, IHttpContextAccessor httpContextAccessor)
+        {
+            this._context = context;
+            this.httpContextAccessor = httpContextAccessor;
+            this.httpContext = this.httpContextAccessor.HttpContext;
+        }
         [HttpGet]
         [Route("/School/LoginProfessor")]
         public ViewResult InitForm()
@@ -19,9 +28,21 @@ namespace SchoolProject.Controllers
         }
         [HttpPost]
         [Route("/School/LoginProfessor")]
-         public ViewResult SubmitForm()
+         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Professor form)
         {  
-            return View();
+            var pass = _context.professor
+                   .Where(u => u.username.Equals(form.username))
+                   .Select(u => u.password)
+                   .FirstOrDefault();
+            if(form.password.Equals(pass))
+            {
+                return View();
+            }
+            else
+            {
+                ViewBag.p = pass;
+                return View("Error");
+            }
         }     
     }
 }
