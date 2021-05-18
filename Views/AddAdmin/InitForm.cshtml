@@ -1,17 +1,26 @@
 @model SchoolProject.Models.Form.Admin_User;
+@using Microsoft.AspNetCore.Http;
+
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginAdmin");
+  }
+}
 <link rel="stylesheet" href="~/css/addstud.css" />
 <link rel="stylesheet" href="~/css/adminadmin.css" />
-
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
 <div class="sidenav">
   <img src="~/img/engineer.png" class="img-circle" width="80" height="80">
   <h4>Admin Menu</h4><br><br>
   <a href="/School/Admin">Home</a>
   <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddParent">Add Parent</a>
   <a href="/School/AddProfessor">Add Professor</a>
   <a href="/School/AddProgram">Add Program</a>
   <a href="/School/AddSubject">Add Subject</a>
   <a href="/School/AddAdmin">Add Admin</a>
-  <a href="/School/LoginAdmin" id="logout">Logout</a>
+  <a id="logout" asp-controller="LoginAdmin" asp-action="logout">Logout</a>
 </div>
 
 <div class="main">
@@ -53,12 +62,9 @@
           <label for="exampleInputEmail1">Password</label>
           @Html.PasswordFor(m => m.password, new{@class="form-control",  @placeholder="Enter Password"})
         </div>
-        <div class="col-xs-3">
-          <label for="exampleInputEmail1">Type</label>
-          @Html.TextBoxFor(m => m.type, new{@class="form-control",  @placeholder="Enter Type"})
-        </div>
       </div>
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   }
+</div>
 </div>

@@ -53,7 +53,7 @@
 							@Html.PasswordFor(m => m.password, new {@id="password", @class="input100", @name="pass", @placeholder="Password"})
 							<span class="focus-input100" data-placeholder="&#xf191;"></span>
 						</div>
-
+						<span style="color: red;">@ViewBag.error</span>
 						<div class="container-login100-form-btn">
 							<button class="login100-form-btn">
 								Login
@@ -62,7 +62,7 @@
 					</form>
 				}
 				<div>
-					<br><span id="span_role">Not a administrator?</span><br>
+					<br><span id="span_role">Not an administrator?</span><br>
 					<div id="cont_role">
 						<a href = "/School/LoginProfessor"><img src="/img/teacher.png" alt="Professor" width="40" height="40" id="role"></a>
 						<a href = "/School/LoginStudent"><img src="/img/students.png" alt="Student" width="40" height="40" id="role"></a>

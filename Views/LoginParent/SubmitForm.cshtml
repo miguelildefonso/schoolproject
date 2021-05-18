@@ -1,2 +1,32 @@
+@model SchoolProject.Models.Form.Parent_User;
+@using SchoolProject.Models.Form;
+@using Microsoft.AspNetCore.Http;
 
-<link rel="stylesheet" href="~/css/adminhome.css" />
+<link rel="stylesheet" href="~/css/parenthome.css" />
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
+<div class="sidenav">
+  <img src="~/img/parents.png" class="img-circle" width="80" height="80">
+  <h4>Parent Menu</h4><br><br>
+  <a href="/School/Parent">Home</a>
+  <a href="/School/Parent/ViewGrade">View Grade</a>
+  <a href="/School/Parent/ViewAttendance">View Attendance</a>
+  <a href="/School/Parent/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginParent" asp-action="parlogout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome, @Context.Session.GetString("username")</h4>
+  <img id="bg-prof" src="/img/parent.png" alt="parent">
+</div>
+</div>

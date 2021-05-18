@@ -26,8 +26,12 @@ namespace SchoolProject.Controllers
 
          public ViewResult InitForm()
         {
+            IQueryable<String> prog = _context.program
+                   .Select(u => u.program_title);
+            ViewBag.p = prog; 
             return View();
         }
+             
         [HttpPost]
         [Route("/School/AddStudent")]
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Student form)
@@ -60,7 +64,10 @@ namespace SchoolProject.Controllers
                                         select s;
                 IQueryable<Subject> subj = from s in _context.subject
                                         select s;
-                ViewBag.subject = subj;
+                IQueryable<Parent_User> par = from s in _context.parent_user
+                                        select s;
+                ViewBag.parent_user = par;
+                ViewBag.subject = subj;  
                 ViewBag.student = stud;
                 ViewBag.admin_user = admin;
                 ViewBag.professor = profe; 

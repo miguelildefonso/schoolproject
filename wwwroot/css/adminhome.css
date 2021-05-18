@@ -44,11 +44,41 @@ h4{
     margin-left: 55px;
     margin-top: 50px;
   }
-  .tableadmin, .tableprogram, .tableprof, .tablestud, .tablesub {
+  .tableadmin, .tableprogram, .tableprof, .tablestud, .tablesub, .tableparent {
     margin-left: 100px;
     width: 800px;
   }
   #logout{
     position: absolute;
     bottom: 20;
+  }
+
+  .container-login100 {
+    width: 100%;  
+    min-height: 100vh;
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: flex;
+    flex-wrap: wrap;
+    padding: 15px;
+  
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    z-index: 1;  
+  }
+  
+  .container-login100::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0.9);
   }

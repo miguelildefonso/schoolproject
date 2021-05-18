@@ -1,16 +1,23 @@
-@model SchoolProject.Models.Form.Grades;
+@model SchoolProject.Models.Form.Professor;
 @using SchoolProject.Models.Form;
-<link rel="stylesheet" href="~/css/profhome.css" />
+@using Microsoft.AspNetCore.Http;
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginProfessor");
+  }
+}
 
+<link rel="stylesheet" href="~/css/profhome.css" />
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
 <div class="sidenav">
   <img src="~/img/teacher.png" class="img-circle" width="80" height="80">
   <h4>Professor Menu</h4><br><br>
   <a href="/School/Professor">Home</a>
-  <a href="/School/AddGrades">Add Grade</a>
-  <a href="/School/AddAttendance">Add Attendance</a>
-  <a href="#">View Profile</a>
-  <a href="#">View Record</a>
-  <a href="/School/LoginProfessor" id="logout">Logout</a>
+  <a href="/School/Professor/AddGrades">Add Grade</a>
+  <a href="/School/Professor/AddAttendance">Add Attendance</a>
+  <a href="/School/Professor/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginProfessor" asp-action="proflogout">Logout</a>
 </div>
 
 <div class="main">
@@ -25,7 +32,7 @@
       </ul>
     </div>
   </nav>
-  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome</h4>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome, @Context.Session.GetString("username")</h4>
   <img id="bg-prof" src="/img/prof.png" alt="professor">
-  
+</div>
 </div>

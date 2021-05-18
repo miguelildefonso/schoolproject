@@ -1,0 +1,67 @@
+@model SchoolProject.Models.Form.Attendance;
+@using SchoolProject.Models.Data;
+@using Microsoft.AspNetCore.Http;
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginStudent");
+  }
+}
+
+<link rel="stylesheet" href="~/css/parentattendance.css" />
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
+<div class="sidenav">
+  <img src="~/img/students.png" class="img-circle" width="80" height="80">
+  <h4>Student Menu</h4><br><br>
+  <a href="/School/Student">Home</a>
+  <a href="/School/Student/ViewGrade">View Grade</a>
+  <a href="/School/Student/ViewAttendance">View Attendance</a>
+  <a href="/School/Student/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginStudent" asp-action="studlogout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+   <h4 style="margin-top: 20px; margin-bottom: 30px;">Student Attendance Viewer</h4>
+  @using(Html.BeginForm("SubmitForm", "ParentAttendance", FormMethod.Post))
+  {
+    <div class="container" id="container" datenow="">
+      <table class="table-header-rotated">
+        <thead>
+          <tr>
+            <th></th>
+            <th class="rotate">
+              @{
+                var bday = @ViewBag.date;
+                var b = bday.ToShortDateString();
+                <div><span>@b</span></div>
+              }
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          @{ 
+            @foreach (var item in @ViewBag.attendance as IEnumerable<Attendance>)
+            {
+              <tr>
+                <th class="row-header">@item.subject_code</th>
+                <td>@item.comment</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+</div>

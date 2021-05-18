@@ -9,6 +9,5 @@ namespace SchoolProject.Models.Form
         public string password {get; set;}
         public string firstname {get; set;}
         public string lastname {get; set;}
-        public string type {get; set;}
     }
 }

@@ -2,7 +2,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>Login V3</title>
+	<title>School</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -53,7 +53,7 @@
 							@Html.PasswordFor(m => m.password, new {@class="input100", @name="pass", @placeholder="Password"})
 							<span class="focus-input100" data-placeholder="&#xf191;"></span>
 						</div>
-
+						<span style="color: red;">@ViewBag.error</span>
 						<div class="container-login100-form-btn">
 							<button class="login100-form-btn">
 								Login

@@ -14422,8 +14422,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\SchoolProject\\Views\\StudentProfile\\InitForm.cshtml",
+      "TargetPath": "Views\\StudentProfile\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\SchoolProject\\Views\\AdminHome\\InitForm.cshtml",
       "TargetPath": "Views\\AdminHome\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentAttendance\\SubmitForm.cshtml",
+      "TargetPath": "Views\\ParentAttendance\\SubmitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14432,8 +14442,18 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\SchoolProject\\Views\\ProfProfile\\SubmitForm.cshtml",
+      "TargetPath": "Views\\ProfProfile\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\SchoolProject\\Views\\Home\\Privacy.cshtml",
       "TargetPath": "Views\\Home\\Privacy.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentHome\\InitForm.cshtml",
+      "TargetPath": "Views\\ParentHome\\InitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14452,6 +14472,11 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\SchoolProject\\Views\\AddParent\\InitForm.cshtml",
+      "TargetPath": "Views\\AddParent\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\SchoolProject\\Views\\AddAttendance\\InitForm.cshtml",
       "TargetPath": "Views\\AddAttendance\\InitForm.cshtml",
       "FileKind": "mvc"
@@ -14459,6 +14484,11 @@
     {
       "FilePath": "c:\\SchoolProject\\Views\\Shared\\Error.cshtml",
       "TargetPath": "Views\\Shared\\Error.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentGrade\\InitForm.cshtml",
+      "TargetPath": "Views\\ParentGrade\\InitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14472,8 +14502,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\SchoolProject\\Views\\Login\\InitForm.cshtml",
-      "TargetPath": "Views\\Login\\InitForm.cshtml",
+      "FilePath": "c:\\SchoolProject\\Views\\ParentGrade\\SubmitForm.cshtml",
+      "TargetPath": "Views\\ParentGrade\\SubmitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14502,8 +14532,8 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\SchoolProject\\Views\\Login\\Error.cshtml",
-      "TargetPath": "Views\\Login\\Error.cshtml",
+      "FilePath": "c:\\SchoolProject\\Views\\ParentProfile\\InitForm.cshtml",
+      "TargetPath": "Views\\ParentProfile\\InitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14519,6 +14549,21 @@
     {
       "FilePath": "c:\\SchoolProject\\Views\\ProfHome\\InitForm.cshtml",
       "TargetPath": "Views\\ProfHome\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\StudentGrade\\InitForm.cshtml",
+      "TargetPath": "Views\\StudentGrade\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentHome\\SubmitForm.cshtml",
+      "TargetPath": "Views\\ParentHome\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\StudentAttendance\\SubmitForm.cshtml",
+      "TargetPath": "Views\\StudentAttendance\\SubmitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14547,6 +14592,26 @@
       "FileKind": "mvc"
     },
     {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentProfile\\SubmitForm.cshtml",
+      "TargetPath": "Views\\ParentProfile\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\StudentGrade\\SubmitForm.cshtml",
+      "TargetPath": "Views\\StudentGrade\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\StudentAttendance\\InitForm.cshtml",
+      "TargetPath": "Views\\StudentAttendance\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ProfProfile\\InitForm.cshtml",
+      "TargetPath": "Views\\ProfProfile\\InitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
       "FilePath": "c:\\SchoolProject\\Views\\AddAdmin\\SubmitForm.cshtml",
       "TargetPath": "Views\\AddAdmin\\SubmitForm.cshtml",
       "FileKind": "mvc"
@@ -14572,8 +14637,13 @@
       "FileKind": "mvc"
     },
     {
-      "FilePath": "c:\\SchoolProject\\Views\\Login\\SubmitForm.cshtml",
-      "TargetPath": "Views\\Login\\SubmitForm.cshtml",
+      "FilePath": "c:\\SchoolProject\\Views\\StudentProfile\\SubmitForm.cshtml",
+      "TargetPath": "Views\\StudentProfile\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\ParentAttendance\\InitForm.cshtml",
+      "TargetPath": "Views\\ParentAttendance\\InitForm.cshtml",
       "FileKind": "mvc"
     },
     {
@@ -14609,6 +14679,11 @@
     {
       "FilePath": "c:\\SchoolProject\\Views\\StudentHome\\SubmitForm.cshtml",
       "TargetPath": "Views\\StudentHome\\SubmitForm.cshtml",
+      "FileKind": "mvc"
+    },
+    {
+      "FilePath": "c:\\SchoolProject\\Views\\AddParent\\SubmitForm.cshtml",
+      "TargetPath": "Views\\AddParent\\SubmitForm.cshtml",
       "FileKind": "mvc"
     },
     {

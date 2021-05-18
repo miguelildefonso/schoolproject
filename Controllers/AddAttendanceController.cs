@@ -22,14 +22,14 @@ namespace SchoolProject.Controllers
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
         [HttpGet]
-        [Route("/School/AddAttendance")]
+        [Route("/School/Professor/AddAttendance")]
 
          public ViewResult InitForm()
         {
             return View();
         }
         [HttpPost]
-        [Route("/School/AddAttendance")]
+        [Route("/School/Professor/AddAttendance")]
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Attendance form)
         {
             Attendance a = new Attendance();

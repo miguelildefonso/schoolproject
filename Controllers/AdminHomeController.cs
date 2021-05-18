@@ -26,41 +26,23 @@ namespace SchoolProject.Controllers
         {
             IQueryable<Admin_User> admin = from s in _context.admin_user
                                         select s;
-            IQueryable<Professor> profe = from s in _context.professor
+                IQueryable<Professor> profe = from s in _context.professor
                                         select s;
-            IQueryable<Programs> prog = from s in _context.program
+                IQueryable<Programs> prog = from s in _context.program
                                         select s;
-            IQueryable<Student> stud = from s in _context.student
+                IQueryable<Student> stud = from s in _context.student
                                         select s;
-            IQueryable<Subject> subj = from s in _context.subject
+                IQueryable<Subject> subj = from s in _context.subject
                                         select s;
-            ViewBag.subject = subj;
-            ViewBag.student = stud;
-            ViewBag.admin_user = admin;
-            ViewBag.professor = profe; 
-            ViewBag.programs = prog; 
+                IQueryable<Parent_User> par = from s in _context.parent_user
+                                        select s;
+                ViewBag.parent_user = par;
+                ViewBag.subject = subj;  
+                ViewBag.student = stud;
+                ViewBag.admin_user = admin;
+                ViewBag.professor = profe; 
+                ViewBag.programs = prog; 
             return View();
-        }
-        [HttpPost]
-        [Route("/School/Admin")]
-         public ViewResult SubmitForm()
-        {
-            IQueryable<Admin_User> admin = from s in _context.admin_user
-                                        select s;
-            IQueryable<Professor> profe = from s in _context.professor
-                                        select s;
-            IQueryable<Programs> prog = from s in _context.program
-                                        select s;
-            IQueryable<Student> stud = from s in _context.student
-                                        select s;
-            IQueryable<Subject> subj = from s in _context.subject
-                                        select s;
-            ViewBag.subject = subj;
-            ViewBag.student = stud;
-            ViewBag.admin_user = admin;
-            ViewBag.professor = profe; 
-            ViewBag.programs = prog; 
-            return View();
-        }     
+        } 
     }
 }

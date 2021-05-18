@@ -1,0 +1,58 @@
+@model SchoolProject.Models.Form.Grades;
+@using SchoolProject.Models.Data;
+
+<link rel="stylesheet" href="~/css/adminhome.css" />
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
+<div class="sidenav">
+  <img src="~/img/students.png" class="img-circle" width="80" height="80">
+  <h4>Student Menu</h4><br><br>
+  <a href="/School/Student">Home</a>
+  <a href="/School/Student/ViewGrade">View Grade</a>
+  <a href="/School/Student/ViewAttendance">View Attendance</a>
+  <a href="/School/Student/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginStudent" asp-action="studlogout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  @using(Html.BeginForm("SubmitForm", "StudentGrade", FormMethod.Post))
+  {
+    <div class="tableadmin">
+      <h3>Student Grade</h3>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Subject Code</th>
+            <th>Grade</th>
+            <th>Remarks</th>
+            <th>Comment</th>
+          </tr>
+        </thead>
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.grades as IEnumerable<Grades>)
+            {
+              <tr>
+                <td>@item.subject_title</td>
+                <td>@item.grade</td>
+                <td>@item.remarks</td>
+                <td>@item.comment</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+</div>

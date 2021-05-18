@@ -1,0 +1,81 @@
+@model SchoolProject.Models.Form.Parent_User;
+@using SchoolProject.Models.Data;
+@using Microsoft.AspNetCore.Http;
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginParent");
+  }
+}
+
+<link rel="stylesheet" href="~/css/parenthome.css" />
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
+<div class="sidenav">
+  <img src="~/img/parents.png" class="img-circle" width="80" height="80">
+  <h4>Parent Menu</h4><br><br>
+  <a href="/School/Parent">Home</a>
+  <a href="/School/Parent/ViewGrade">View Grade</a>
+  <a href="/School/Parent/ViewAttendance">View Attendance</a>
+  <a href="/School/Parent/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginParent" asp-action="parlogout">Logout</a>
+</div>
+
+<div class="main">
+  <nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav" style="margin-left: auto;">
+        <li class="nav-item">
+          @{
+            <a class="navbar-brand">@DateTime.Now.ToString("dddd , MMM dd, yyyy")</a>
+          }
+        </li>
+      </ul>
+    </div>
+  </nav>
+  @using(Html.BeginForm("SubmitForm", "ParentProfile", FormMethod.Post))
+  {
+    <div class="tableadmin">
+      <h3>My Profile</h3>
+      <table class="table table-sm table-bordered">
+
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.parent_user as IEnumerable<Parent_User>)
+            {
+              <tr>
+                <td>Parent ID</td>
+                <td>@item.parent_id</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Last Name</td>
+                <td>@item.lastname</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>First Name</td>
+                <td>@item.firstname</td>
+                <td></td>
+              </tr>
+              <tr>
+                <td>Username</td>
+                <td>@Html.TextBoxFor(m => m.username, new{@class="form-control",  @placeholder=@item.username})</td>
+                <td>
+                  <a href="#">Edit</a>
+                </td>
+              </tr>
+              <tr>
+                <td>Password</td>
+                <td>@Html.TextBoxFor(m => m.password, new{@class="form-control",  @placeholder=@item.password})</td>
+                <td>
+                  <a href="#">Edit</a>
+                </td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
+  }
+</div>
+</div>

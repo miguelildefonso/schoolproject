@@ -1,15 +1,21 @@
 @model SchoolProject.Models.Form.Grades;
 @using SchoolProject.Models.Form;
+@using Microsoft.AspNetCore.Http;
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginProfessor");
+  }
+}
 <link rel="stylesheet" href="~/css/profgrades.css" />
-
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
 <div class="sidenav">
   <img src="~/img/teacher.png" class="img-circle" width="80" height="80">
   <h4>Professor Menu</h4><br><br>
   <a href="/School/Professor">Home</a>
-  <a href="/School/AddGrades">Add Grade</a>
-  <a href="/School/AddAttendance">Add Attendance</a>
-  <a href="#">View Profile</a>
-  <a href="#">View Record</a>
+  <a href="/School/Professor/AddGrades">Add Grade</a>
+  <a href="/School/Professor/AddAttendance">Add Attendance</a>
+  <a href="/School/Professor/Profile">View Profile</a>
   <a href="/School/LoginProfessor" id="logout">Logout</a>
 </div>
 
@@ -64,4 +70,5 @@
       <button type="submit" class="btn btn-primary">Submit</button>
     </form>
   }
+</div>
 </div>

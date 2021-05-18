@@ -1,18 +1,20 @@
 @model SchoolProject.Models.Form.Admin_User;
 @using SchoolProject.Models.Data;
+@using Microsoft.AspNetCore.Http;
 
 <link rel="stylesheet" href="~/css/adminhome.css" />
-
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
 <div class="sidenav">
   <img src="~/img/engineer.png" class="img-circle" width="80" height="80">
   <h4>Admin Menu</h4><br><br>
   <a href="/School/Admin">Home</a>
   <a href="/School/AddStudent">Add Student</a>
+  <a href="/School/AddParent">Add Parent</a>
   <a href="/School/AddProfessor">Add Professor</a>
   <a href="/School/AddProgram">Add Program</a>
   <a href="/School/AddSubject">Add Subject</a>
   <a href="/School/AddAdmin">Add Admin</a>
-  <a href="/School/Login" id="logout">Logout</a>
+  <a id="logout" asp-controller="LoginAdmin" asp-action="logout">Logout</a>
 </div>
 
 <div class="main">
@@ -27,6 +29,7 @@
       </ul>
     </div>
   </nav>
+  <h4>Welcome, @Context.Session.GetString("username")</h4>
   @using(Html.BeginForm("SubmitForm", "AdminHome", FormMethod.Post))
   {
     <div class="tableadmin">
@@ -37,7 +40,6 @@
             <th>Admin ID</th>
             <th>First Name</th>
             <th>Last Name</th>
-            <th>Type</th>
             <th>Username</th>
           </tr>
         </thead>
@@ -49,7 +51,6 @@
                 <td>@item.admin_id</td>
                 <td>@item.firstname</td>
                 <td>@item.lastname</td>
-                <td>@item.type</td>
                 <td>@item.username</td>
               </tr>
             }
@@ -193,5 +194,33 @@
         </tbody>
       </table>
     </div>
+
+    <div class="tableparent">
+      <h3>Parent</h3>
+      <table class="table table-sm table-striped">
+        <thead>
+          <tr>
+            <th>Parent ID</th>
+            <th>Last Name</th>
+            <th>First Name</th>
+            <th>Username</th>
+          </tr>
+        </thead>
+        <tbody>
+          @{
+            @foreach (var item in @ViewBag.parent_user as IEnumerable<Parent_User>)
+            {
+              <tr>
+                <td>@item.parent_id</td>
+                <td>@item.lastname</td>
+                <td>@item.firstname</td>
+                <td>@item.username</td>
+              </tr>
+            }
+          }
+        </tbody>
+      </table>
+    </div>
   }
+</div>
 </div>

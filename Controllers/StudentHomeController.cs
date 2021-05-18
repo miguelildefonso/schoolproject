@@ -25,13 +25,6 @@ namespace SchoolProject.Controllers
         public ViewResult InitForm()
         {
             return View();
-        }
-        [HttpPost]
-        [Route("/School/Student")]
-         public ViewResult SubmitForm()
-        {
-            return View();
-        }     
-        
+        }  
     }
 }

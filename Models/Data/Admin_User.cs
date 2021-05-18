@@ -17,7 +17,5 @@ namespace SchoolProject.Models.Data
         public string firstname {get; set;}
         [Column]
         public string lastname {get; set;}
-        [Column]
-        public string type {get; set;}
     }
 }

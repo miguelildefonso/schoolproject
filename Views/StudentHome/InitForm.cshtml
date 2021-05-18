@@ -1,14 +1,20 @@
-
+@using Microsoft.AspNetCore.Http;
+@{
+  if(@Context.Session.GetString("username") == null)
+  {
+    Context.Response.Redirect("/School/LoginStudent");
+  }
+}
 <link rel="stylesheet" href="~/css/studhome.css" />
-
+<div class="container-login100" style="background-image: url('/img/konkuk.jpg');">
 <div class="sidenav">
   <img src="~/img/students.png" class="img-circle" width="80" height="80">
   <h4>Student Menu</h4><br><br>
   <a href="/School/Student">Home</a>
-  <a href="#">View Grade</a>
-  <a href="#">View Attendance</a>
-  <a href="#">View Profile</a>
-  <a href="/School/LoginStudent" id="logout">Logout</a>
+  <a href="/School/Student/ViewGrade">View Grade</a>
+  <a href="/School/Student/ViewAttendance">View Attendance</a>
+  <a href="/School/Student/Profile">View Profile</a>
+  <a id="logout" asp-controller="LoginStudent" asp-action="studlogout">Logout</a>
 </div>
 
 <div class="main">
@@ -23,7 +29,7 @@
       </ul>
     </div>
   </nav>
-  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome</h4>
+  <h4 style="margin-top: 20px; margin-bottom: 30px;">Welcome, @Context.Session.GetString("username")</h4>
   <img id="bg-prof" src="/img/stud.png" alt="student">
-  
+</div>
 </div>

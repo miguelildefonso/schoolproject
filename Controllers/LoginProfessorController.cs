@@ -20,6 +20,7 @@ namespace SchoolProject.Controllers
             this.httpContextAccessor = httpContextAccessor;
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
+
         [HttpGet]
         [Route("/School/LoginProfessor")]
         public ViewResult InitForm()
@@ -27,22 +28,36 @@ namespace SchoolProject.Controllers
             return View();
         }
         [HttpPost]
-        [Route("/School/LoginProfessor")]
+        [Route("/School/Professor")]
          public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Professor form)
         {  
-            var pass = _context.professor
-                   .Where(u => u.username.Equals(form.username))
-                   .Select(u => u.password)
+            var user = _context.professor
+                   .Where(u => u.username == form.username && u.password == form.password)
                    .FirstOrDefault();
-            if(form.password.Equals(pass))
+            if(user == null)
             {
-                return View();
+                ViewBag.error = "Login error!";
+                return View("InitForm");
             }
             else
             {
-                ViewBag.p = pass;
-                return View("Error");
+                var profid = _context.professor
+                    .Where(u => u.username == form.username)
+                    .Select(u => u.professor_id)
+                    .FirstOrDefault();
+                httpContext.Session.SetString("username",form.username);
+                httpContext.Session.SetInt32("uid",profid);
+                return View();
             }
         }     
+
+        [Route("proflogout")]
+        [HttpGet]
+        public IActionResult profLogout()
+        {
+            HttpContext.Session.Remove("username");
+            HttpContext.Session.Remove("uid");
+            return RedirectToAction("InitForm");
+        }
     }
 }

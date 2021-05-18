@@ -28,19 +28,53 @@ namespace SchoolProject.Controllers
             return View();
         }
         [HttpPost]
-        [Route("/School/LoginAdmin")]
+        [Route("/School/Admin")]
          public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Admin_User form)
         {  
-            var pass = _context.admin_user
-                   .Where(u => u.username == form.username)
-                   .Select(u =>u.password)
+            var user = _context.admin_user
+                   .Where(u => u.username == form.username && u.password == form.password)
                    .FirstOrDefault();
-            ViewBag.p = pass;
-            if(form.password.Equals(pass))
+            if(user == null)
             {
+                ViewBag.error = "Login error!";
+                return View("InitForm");
+            }
+            else
+            {
+                httpContext.Session.SetString("username",form.username);
+                ShowData();
                 return View();
             }
-            return View("Error");
+        }
+
+        [Route("logout")]
+        [HttpGet]
+        public IActionResult Logout()
+        {
+            HttpContext.Session.Remove("username");
+            return RedirectToAction("InitForm");
+        }
+
+        public void ShowData()
+        {
+            IQueryable<Admin_User> admin = from s in _context.admin_user
+                                        select s;
+            IQueryable<Professor> profe = from s in _context.professor
+                                        select s;
+            IQueryable<Programs> prog = from s in _context.program
+                                        select s;
+            IQueryable<Student> stud = from s in _context.student
+                                        select s;
+            IQueryable<Subject> subj = from s in _context.subject
+                                        select s;
+            IQueryable<Parent_User> par = from s in _context.parent_user
+                                        select s;
+            ViewBag.parent_user = par;
+            ViewBag.subject = subj;  
+            ViewBag.student = stud;
+            ViewBag.admin_user = admin;
+            ViewBag.professor = profe; 
+            ViewBag.programs = prog; 
         }     
     }
 }

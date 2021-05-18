@@ -1,13 +1,20 @@
 using System;
+using LinqToDB.Mapping;
+using System.ComponentModel.DataAnnotations;
 namespace SchoolProject.Models.Data
 {
+    [Table]
     public class Parent_User
     {
-        Int32 Parent_id {get; set;}
-        string Username {get; set;}
-        string Password {get; set;}
-        string Firstname {get; set;}
-        string Lastname {get; set;}
-        string Type {get; set;}
+        [Key]
+        public Int32 parent_id {get; set;}
+        [Column]
+        public string username {get; set;}
+        [Column]
+        public string password {get; set;}
+        [Column]
+        public string firstname {get; set;}
+        [Column]
+        public string lastname {get; set;}
     }
 }

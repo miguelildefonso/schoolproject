@@ -13,6 +13,7 @@ namespace SchoolProject.Models.Data
         public DbSet<Programs> program {get; set;}
         public DbSet<Professor> professor {get; set;}
         public DbSet<Student> student {get; set;}
+        public DbSet<Parent_User> parent_user {get; set;}
         public DbSet<Subject> subject {get; set;}
         public DbSet<Grades> grades {get; set;}
         public DbSet<Attendance> attendance {get; set;}

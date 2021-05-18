@@ -22,14 +22,14 @@ namespace SchoolProject.Controllers
             this.httpContext = this.httpContextAccessor.HttpContext;
         }
         [HttpGet]
-        [Route("/School/AddGrades")]
+        [Route("/School/Professor/AddGrades")]
 
          public ViewResult InitForm()
         {
             return View();
         }
         [HttpPost]
-        [Route("/School/AddGrades")]
+        [Route("/School/Professor/AddGrades")]
         public ViewResult SubmitForm([Bind] SchoolProject.Models.Form.Grades form)
         {
             Grades gr = new Grades();

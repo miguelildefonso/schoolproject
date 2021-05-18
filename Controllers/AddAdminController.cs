@@ -38,7 +38,6 @@ namespace SchoolProject.Controllers
             a.lastname = form.lastname;
             a.username = form.username;
             a.password = form.password;
-            a.type = form.type;
             _context.admin_user.Add(a);
             int rec = _context.SaveChanges();
             if(rec==1)
@@ -53,6 +52,9 @@ namespace SchoolProject.Controllers
                                         select s;
                 IQueryable<Subject> subj = from s in _context.subject
                                         select s;
+                IQueryable<Parent_User> par = from s in _context.parent_user
+                                        select s;
+                ViewBag.parent_user = par;
                 ViewBag.subject = subj;  
                 ViewBag.student = stud;
                 ViewBag.admin_user = admin;
@@ -62,6 +64,5 @@ namespace SchoolProject.Controllers
             }
             return View("Error");
         }
-        
     }
 }
